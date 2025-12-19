@@ -1,24 +1,77 @@
 # Core Data Science Libraries
-pandas>=1.3.0
-numpy>=1.21.0
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
 
 # Machine Learning
-scikit-learn>=1.0.0
-xgboost>=1.5.0
-imbalanced-learn>=0.9.0
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+catboost>=1.2.0
+imbalanced-learn>=0.11.0
+
+# Deep Learning (optional - for neural network model)
+# tensorflow>=2.13.0
+
+# Hyperparameter Tuning
+optuna>=3.3.0
+
+# Experiment Tracking
+mlflow>=2.8.0
+
+# Model Explainability
+shap>=0.43.0
+lime>=0.2.0
 
 # Visualization
-matplotlib>=3.4.0
-seaborn>=0.11.0
-plotly>=5.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# Web Framework - Backend
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.5.0
+python-multipart>=0.0.6
+
+# Web Framework - Frontend
+streamlit>=1.28.0
+streamlit-option-menu>=0.3.6
+streamlit-extras>=0.3.5
+
+# Database
+sqlalchemy>=2.0.0
+aiosqlite>=0.19.0
+
+# API Client
+httpx>=0.25.0
+requests>=2.31.0
+
+# Data Validation
+pandera>=0.17.0
+great-expectations>=0.18.0
 
 # Jupyter
 jupyter>=1.0.0
-notebook>=6.4.0
+notebook>=7.0.0
+ipywidgets>=8.1.0
 
 # Utilities
-openpyxl>=3.0.0
+openpyxl>=3.1.0
 xlrd>=2.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+joblib>=1.3.0
+tqdm>=4.66.0
+loguru>=0.7.0
 
-# Progress bars (optional but helpful)
-tqdm>=4.62.0
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Code Quality
+black>=23.10.0
+flake8>=6.1.0
+isort>=5.12.0
+mypy>=1.6.0

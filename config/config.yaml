@@ -1,0 +1,149 @@
+# Churn Prediction System Configuration
+
+# Project Info
+project:
+  name: "E-Commerce Customer Churn Prediction"
+  version: "1.0.0"
+  author: "Muhammad Abdullah"
+
+# Data Configuration
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  external_path: "data/external"
+  target_column: "Churn"
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+
+# Feature Engineering
+features:
+  numerical:
+    - "Tenure"
+    - "WarehouseToHome"
+    - "HourSpendOnApp"
+    - "NumberOfDeviceRegistered"
+    - "NumberOfAddress"
+    - "OrderAmountHikeFromlastYear"
+    - "CouponUsed"
+    - "OrderCount"
+    - "DaySinceLastOrder"
+    - "CashbackAmount"
+
+  categorical:
+    - "PreferredLoginDevice"
+    - "CityTier"
+    - "PreferredPaymentMode"
+    - "Gender"
+    - "PreferedOrderCat"
+    - "SatisfactionScore"
+    - "MaritalStatus"
+    - "Complain"
+
+  # Features to drop
+  drop_columns:
+    - "CustomerID"
+
+# Model Configuration
+models:
+  logistic_regression:
+    enabled: true
+    params:
+      max_iter: 1000
+      class_weight: "balanced"
+      random_state: 42
+
+  random_forest:
+    enabled: true
+    params:
+      n_estimators: 200
+      max_depth: 15
+      min_samples_split: 5
+      min_samples_leaf: 2
+      class_weight: "balanced"
+      random_state: 42
+      n_jobs: -1
+
+  xgboost:
+    enabled: true
+    params:
+      n_estimators: 200
+      max_depth: 6
+      learning_rate: 0.1
+      subsample: 0.8
+      colsample_bytree: 0.8
+      scale_pos_weight: 1
+      random_state: 42
+      n_jobs: -1
+
+  lightgbm:
+    enabled: true
+    params:
+      n_estimators: 200
+      max_depth: 10
+      learning_rate: 0.1
+      num_leaves: 31
+      class_weight: "balanced"
+      random_state: 42
+      n_jobs: -1
+      verbose: -1
+
+  catboost:
+    enabled: true
+    params:
+      iterations: 200
+      depth: 6
+      learning_rate: 0.1
+      auto_class_weights: "Balanced"
+      random_state: 42
+      verbose: 0
+
+# Hyperparameter Tuning
+tuning:
+  enabled: true
+  n_trials: 50
+  cv_folds: 5
+  scoring: "f1"
+  direction: "maximize"
+
+# MLflow Configuration
+mlflow:
+  tracking_uri: "mlflow_runs"
+  experiment_name: "churn_prediction"
+  registered_model_name: "churn_classifier"
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  workers: 1
+
+# Dashboard Configuration
+dashboard:
+  host: "localhost"
+  port: 8501
+  theme: "dark"
+
+# Database Configuration
+database:
+  url: "sqlite:///data/churn_predictions.db"
+  echo: false
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+  rotation: "10 MB"
+  retention: "7 days"
+
+# Evaluation Metrics
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1"
+    - "roc_auc"
+  threshold: 0.5
+  cv_folds: 5
