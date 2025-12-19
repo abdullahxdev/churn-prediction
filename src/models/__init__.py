@@ -2,5 +2,6 @@
 
 from .trainer import ModelTrainer
 from .evaluator import ModelEvaluator
+from .explainer import ModelExplainer
 
-__all__ = ["ModelTrainer", "ModelEvaluator"]
+__all__ = ["ModelTrainer", "ModelEvaluator", "ModelExplainer"]
