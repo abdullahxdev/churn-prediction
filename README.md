@@ -283,7 +283,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-**Your Name**
+**Muhammad Abdullah**
 - GitHub: [@abdullahxdev](https://github.com/abdullahxdev)
 - LinkedIn: [Muhammad Abdullah](https://linkedin.com/in/mabdullahxdev)
 - Email: abdullahisdev@gmail.com
