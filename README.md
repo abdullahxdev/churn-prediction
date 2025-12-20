@@ -283,9 +283,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-**Muhammad Abdullah**
-Machine Learning Fundamentals Project
-COMSATS University
+**Your Name**
+- GitHub: [@abdullahxdev](https://github.com/abdullahxdev)
+- LinkedIn: [Muhammad Abdullah](https://linkedin.com/in/mabdullahxdev)
+- Email: abdullahisdev@gmail.com
 
 ## Acknowledgments
 
